@@ -1,0 +1,16 @@
+
+編輯 /etc/inittab
+
+其內容為
+
+::sysinit:/etc/init.d/rcS S boot
+::shutdown:/etc/init.d/rcS K shutdown
+#ttyATH0::askfirst:/bin/ash --login
+
+
+第三行之前要加上 # 註解掉，即完全關閉Bridge。
+
+如此才會釋放出 Serial1  。
+
+另外 ATmega32u4 那邊，要燒入空白程式碼 (即令Arduino不要多餘的動作)
+
