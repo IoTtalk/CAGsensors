@@ -1,4 +1,4 @@
-IoTtalkServerIP = '140.113.215.6' #Change to your IoTtalk IP
+IoTtalkServerIP = 'IP' #Change to your IoTtalk IP
 SerialPort = '/dev/ttyATH0'
 
 cmd = {}
