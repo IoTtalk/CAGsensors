@@ -13,9 +13,9 @@ for feature in config.cmd:
     previous[feature] = 999
     
 DAN.device_registration_with_retry(ServerIP, Reg_addr)
-os.system(r'echo "heartbeat" > /sys/class/leds/ds:green:usb/trigger')   #For ArduinoYun Only, need to install packages. "opkg install kmod-ledtrig-heartbeat"
+#os.system(r'echo "heartbeat" > /sys/class/leds/ds:green:usb/trigger')   #For ArduinoYun Only, need to install packages. "opkg install kmod-ledtrig-heartbeat"
 #os.system(r'echo "default-on" > /sys/class/leds/ds:green:usb/trigger') #For ArduinoYun Only. LED constant ON.
-#os.system(r'echo "timer" > /sys/class/leds/ds:green:usb/trigger')      #For ArduinoYun Only. LED Blink.
+os.system(r'echo "timer" > /sys/class/leds/ds:green:usb/trigger')      #For ArduinoYun Only. LED Blink.
 
 while True:
     try:
@@ -32,6 +32,6 @@ while True:
         print('Error: '+ str(e))
         os.system(r'echo "none" > /sys/class/leds/ds:green:usb/trigger')                #For ArduinoYun Only
         DAN.device_registration_with_retry(ServerIP, Reg_addr)
-        os.system(r'echo "heartbeat" > /sys/class/leds/ds:green:usb/trigger')           #For ArduinoYun Only
+        os.system(r'echo "timer" > /sys/class/leds/ds:green:usb/trigger')           #For ArduinoYun Only
 
     time.sleep(3)
