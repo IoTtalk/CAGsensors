@@ -4,7 +4,7 @@ file.write('''# Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
 
 wifi-live-or-reset
-#boot-complete-notify
+boot-complete-notify
 
 # Uncomment the following line in order to reset the microntroller
 # right after linux becomes ready
