@@ -10,7 +10,7 @@ DAN.profile['d_name']= 'Indoor311' # None for autoNaming
 previous = {}
 for feature in config.cmd:
     DAN.profile['df_list'].append(feature)
-    previous[feature] = 999
+    previous[feature] = None
 
 DAN.device_registration_with_retry(ServerIP, Reg_addr)
 os.system(r'echo "heartbeat" > /sys/class/leds/ds:green:usb/trigger')   #For ArduinoYun Only, need to install packages. "opkg install kmod-ledtrig-heartbeat"
